@@ -7,7 +7,7 @@ public class MonsterController
 {
 	private MonsterFrame appFrame;
 	private Monster [] monsters;
-	private Monster monsterCount;
+	private int monsterCount;
 	
 	public MonsterController()
 	{
