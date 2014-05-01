@@ -7,6 +7,7 @@ import javax.swing.SpringLayout;
 
 import marsh.controller.MonsterController;
 import java.awt.Color;
+import java.net.URL;
 
 public class MonsterPanel extends JPanel
 {
@@ -22,6 +23,8 @@ public class MonsterPanel extends JPanel
 	private JLabel eyesLabel;
 	private JLabel hornsLabel;
 	private SpringLayout baseLayout;
+	private PicturePanel picturePanel;
+	private URL imageURL;
 	
 	public MonsterPanel(MonsterController baseController)
 	{
@@ -38,7 +41,10 @@ public class MonsterPanel extends JPanel
 		eyesLabel = new JLabel("# of Eyes: ");
 		hornsLabel = new JLabel("Has Horns?:");
 		baseLayout = new SpringLayout();
-		
+		picturePanel = new PicturePanel(imageURL, 300, 300);
+		imageURL = getClass().getResource("/monster/marsh.view/monster.images/monster1");
+		baseLayout.putConstraint(SpringLayout.WEST, picturePanel, 273, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, picturePanel, -224, SpringLayout.SOUTH, this);
 		
 		setupPanel();
 		setupLayout();
@@ -58,6 +64,7 @@ public class MonsterPanel extends JPanel
 		this.add(legsLabel);
 		this.add(eyesLabel);
 		this.add(hornsLabel);
+		this.add(picturePanel);
 	}
 	
 	public void setupLayout()

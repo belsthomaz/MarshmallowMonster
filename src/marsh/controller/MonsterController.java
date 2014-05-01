@@ -20,6 +20,11 @@ public class MonsterController
 		appFrame = new MonsterFrame(this);
 	}
 	
+	public void setMonster(int position, String name, int legs, int eyes, int arms, boolean hasHorns)
+	{
+		monsters[position] = new Monster(name, legs, eyes, arms, hasHorns);
+	}
+	
 	public void addMonster(String name, int legs, int eyes, int arms, boolean hasHorns)
 	{
 		if(monsterCount < monsters.length)
